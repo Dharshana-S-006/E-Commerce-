@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopSizzle - Ultimate Shop for Fashion, Beauty, Watches & Tech</title>
+  <meta name="description" content="Shop girls tops, western wear, men's clothing, analog watches, wallets, belts, slippers, and makeup on ShopSizzle.">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span><i class="fas fa-fire text-danger"></i> Welcome to <strong>ShopSizzle</strong>! Free Shipping on orders over $50 | 24/7 SizzleAI Assistant</span>
+      <div class="top-bar-links">
+        <a href="#track" onclick="showSection('track')">Track Order</a>
+        <a href="#" onclick="openHelpModal()">Help & FAQ</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="#" class="brand-logo" onclick="showSection('shop')">
+        <div class="logo-icon"><i class="fas fa-fire-flame-curved"></i></div>
+        <span class="logo-text">Shop<span>Sizzle</span></span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="search-input" placeholder="Search tops, watches, wallets, makeup, slippers..." autocomplete="off">
+        <button class="clear-search-btn" id="clear-search" style="display:none;"><i class="fas fa-times"></i></button>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="nav-links">
+        <a href="#home" class="nav-item active" id="nav-home" onclick="showSection('shop')">Home</a>
+        <a href="#shop" class="nav-item" id="nav-shop" onclick="showSection('shop')">Shop</a>
+        <a href="#categories" class="nav-item" onclick="scrollToCategories()">Categories</a>
+        <a href="#track" class="nav-item" id="nav-track" onclick="showSection('track')">Track Order</a>
+      </nav>
+
+      <!-- Nav Actions (Wishlist, Cart, User) -->
+      <div class="nav-actions">
+        <button class="icon-btn" id="wishlist-btn" title="Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+
+        <button class="icon-btn" id="cart-btn" title="Shopping Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+
+        <button class="btn btn-outline btn-login" id="login-btn">
+          <i class="far fa-user"></i> Login
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SHOP SECTION -->
+  <main id="shop-section" class="page-section">
+    
+    <!-- Hero Banner -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-content">
+            <span class="hero-tag"><i class="fas fa-sparkles"></i> New Season Collection</span>
+            <h1>Sizzle Up Your Style at ShopSizzle</h1>
+            <p>Explore girls' western tops, men's fashion, analog & smart watches, leather wallets, jewellery, makeup & slippers.</p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-primary" onclick="scrollToProducts()">Shop All Items <i class="fas fa-arrow-right"></i></a>
+              <button class="btn btn-secondary" onclick="toggleChatbot()">Ask SizzleAI ✨</button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80" alt="ShopSizzle Watches & Fashion">
+            <div class="hero-badge-floating">
+              <i class="fas fa-heart text-danger"></i>
+              <div>
+                <strong>4.9 / 5.0 Rating</strong>
+                <span>24+ Trending Items Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Filter Bar -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Shop by Category</h2>
+          <p>Browse girls western wear, men's shirts, watches, jewellery, wallets, makeup & slippers</p>
+        </div>
+
+        <div class="categories-grid" id="category-pills">
+          <button class="cat-pill active" data-category="all">
+            <i class="fas fa-border-all"></i> All Items
+          </button>
+          <button class="cat-pill" data-category="Girls Western">
+            <i class="fas fa-shirt"></i> Girls Tops & Western
+          </button>
+          <button class="cat-pill" data-category="Menswear">
+            <i class="fas fa-user-tie"></i> Men's Clothing
+          </button>
+          <button class="cat-pill" data-category="Watches & Jewellery">
+            <i class="fas fa-clock"></i> Watches & Jewellery
+          </button>
+          <button class="cat-pill" data-category="Wallets & Belts">
+            <i class="fas fa-wallet"></i> Wallets, Belts & Bags
+          </button>
+          <button class="cat-pill" data-category="Beauty">
+            <i class="fas fa-spray-can-sparkles"></i> Girls Makeup & Beauty
+          </button>
+          <button class="cat-pill" data-category="Slippers & Footwear">
+            <i class="fas fa-shoe-prints"></i> Slippers & Footwear
+          </button>
+          <button class="cat-pill" data-category="Electronics">
+            <i class="fas fa-laptop"></i> Tech & Audio
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid Section -->
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="products-header">
+          <div>
+            <h2 id="products-title">Trending Products on ShopSizzle</h2>
+            <span class="results-count" id="results-count">Showing items</span>
+          </div>
+
+          <div class="sort-wrapper">
+            <label for="sort-select"><i class="fas fa-sort"></i> Sort by:</label>
+            <select id="sort-select" class="sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="products-grid">
+          <!-- Dynamic Products JavaScript Injection -->
+        </div>
+
+        <!-- Empty state fallback -->
+        <div class="empty-products" id="empty-products" style="display: none;">
+          <i class="fas fa-search fa-3x"></i>
+          <h3>No products found</h3>
+          <p>Try searching for another keyword or clear filters.</p>
+          <button class="btn btn-outline" id="reset-filters-btn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TRACK ORDER SECTION -->
+  <section id="track-section" class="page-section" style="display: none;">
+    <div class="container">
+      <div class="track-page-card">
+        <div class="track-header text-center">
+          <span class="badge-pill"><i class="fas fa-location-dot"></i> Order Tracking</span>
+          <h2>Track Your ShopSizzle Order</h2>
+          <p>Enter your Order ID below to view real-time shipment updates</p>
+        </div>
+
+        <form class="track-form" id="track-form">
+          <div class="track-input-group">
+            <i class="fas fa-receipt input-icon"></i>
+            <input type="text" id="track-order-id" placeholder="Enter Order ID e.g. ORD-8921, ORD-7742" value="ORD-8921" required>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Track Order</button>
+          </div>
+          <div class="sample-ids-hint">
+            <span>Sample Order IDs:</span>
+            <button type="button" class="chip-sm" onclick="setTrackId('ORD-8921')">#ORD-8921 (Out for Delivery)</button>
+            <button type="button" class="chip-sm" onclick="setTrackId('ORD-7742')">#ORD-7742 (Delivered)</button>
+            <button type="button" class="chip-sm" onclick="setTrackId('ORD-3109')">#ORD-3109 (Return Processing)</button>
+          </div>
+        </form>
+
+        <!-- Track Result Display Area -->
+        <div id="track-result-container" class="track-result-card" style="display: none;">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-bag"></i> Your Cart (<span id="cart-item-count">0</span>)</h3>
+      <button class="close-btn" id="close-cart-btn"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="cart-body" id="cart-items-container">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">$0.00</strong>
+      </div>
+      <div class="cart-summary-line">
+        <span>Delivery Fee</span>
+        <span id="cart-delivery">$4.99 (Free over $50)</span>
+      </div>
+      <div class="cart-summary-line total-line">
+        <span>Total Amount</span>
+        <strong id="cart-total">$0.00</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkout-btn" onclick="openCheckoutModal()">
+        Proceed to Checkout <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- PRODUCT DETAILS MODAL -->
+  <div class="modal-backdrop" id="product-modal-backdrop">
+    <div class="modal-card product-modal-card">
+      <button class="modal-close" onclick="closeProductModal()"><i class="fas fa-times"></i></button>
+      <div class="product-modal-body" id="product-modal-content">
+        <!-- JavaScript Dynamic Injection -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT SUCCESS MODAL -->
+  <div class="modal-backdrop" id="checkout-modal-backdrop">
+    <div class="modal-card success-modal-card text-center">
+      <div class="success-icon"><i class="fas fa-circle-check"></i></div>
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you for shopping at <strong>ShopSizzle</strong>. Your order ID is <strong id="new-order-id">ORD-9982</strong>.</p>
+      <p class="text-muted">You will receive shipping updates shortly.</p>
+      <div class="modal-buttons" style="margin-top: 1.5rem;">
+        <button class="btn btn-primary" onclick="trackNewOrder()">Track Order Status</button>
+        <button class="btn btn-outline" onclick="closeCheckoutModal()">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING AI ASSISTANT CHATBOT -->
+  <div class="chatbot-widget">
+    <!-- Chat Trigger Button -->
+    <button class="chatbot-trigger" id="chatbot-trigger" onclick="toggleChatbot()">
+      <span class="sparkle-icon"><i class="fas fa-sparkles"></i></span>
+      <span class="trigger-label">Ask SizzleAI</span>
+    </button>
+
+    <!-- Chat Popup Window -->
+    <div class="chatbot-window" id="chatbot-window" style="display: none;">
+      <div class="chat-header">
+        <div class="chat-title">
+          <div class="bot-avatar"><i class="fas fa-fire-flame-curved"></i></div>
+          <div>
+            <h4>SizzleAI Assistant</h4>
+            <span class="status-online"><i class="fas fa-circle"></i> Online • Tops, Watches, Wallets & Tech Help</span>
+          </div>
+        </div>
+        <button class="chat-close" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="bot-msg">
+          <p>👋 Welcome to **ShopSizzle**! How can I help you find girls tops, western wear, men's shirts, watches, wallets, makeup, or track your orders?</p>
+          <div class="quick-chips">
+            <button onclick="sendQuickPrompt('Show me girls tops & western wear')">👗 Girls Tops & Western</button>
+            <button onclick="sendQuickPrompt('Show me analog watches & smartwatches')">⌚ Watches & Jewellery</button>
+            <button onclick="sendQuickPrompt('Show me leather wallets & belts')">👛 Wallets & Belts</button>
+            <button onclick="sendQuickPrompt('Where is my order #ORD-8921?')">📦 Track Order #ORD-8921</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-bar">
+        <form id="chat-form" onsubmit="handleChatSubmit(event)">
+          <input type="text" id="chat-input-field" placeholder="Ask about tops, watches, wallets, slippers..." autocomplete="off">
+          <button type="submit" class="btn-chat-send"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <div class="brand-logo">
+          <div class="logo-icon"><i class="fas fa-fire-flame-curved"></i></div>
+          <span class="logo-text">Shop<span>Sizzle</span></span>
+        </div>
+        <p>Your destination for girls western wear, men's fashion, luxury watches, leather wallets, jewellery, makeup, and tech accessories with AI support.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Popular Categories</h4>
+        <ul>
+          <li><a href="#categories" onclick="filterByCategory('Girls Western')">Girls Tops & Western Wear</a></li>
+          <li><a href="#categories" onclick="filterByCategory('Menswear')">Men's Shirts & Jackets</a></li>
+          <li><a href="#categories" onclick="filterByCategory('Watches & Jewellery')">Analog & Smart Watches</a></li>
+          <li><a href="#categories" onclick="filterByCategory('Wallets & Belts')">Leather Wallets & Belts</a></li>
+          <li><a href="#categories" onclick="filterByCategory('Beauty')">Girls Makeup & Beauty</a></li>
+          <li><a href="#categories" onclick="filterByCategory('Slippers & Footwear')">Slippers & Footwear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#track" onclick="showSection('track')">Order Tracking</a></li>
+          <li><a href="#" onclick="toggleChatbot()">Return & Refunds</a></li>
+          <li><a href="#" onclick="toggleChatbot()">Shipping Policy</a></li>
+          <li><a href="#" onclick="toggleChatbot()">SizzleAI Help</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact & Student Project</h4>
+        <p><i class="fas fa-envelope"></i> support@shopsizzle.com</p>
+        <p><i class="fas fa-phone"></i> +1 (800) 555-SIZZLE</p>
+        <p><i class="fas fa-graduation-cap"></i> Final Year College Project</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 ShopSizzle. All rights reserved. Built with HTML, CSS, JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div class="toast-notification" id="toast">Item added to cart!</div>
+
+  <!-- JavaScript Entry Point -->
+  <script src="script.js"></script>
+</body>
+</html>
