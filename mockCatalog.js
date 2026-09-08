@@ -1,0 +1,140 @@
+export const mockCatalog = [
+  {
+    id: "PROD-101",
+    name: "AuraSound Pro Wireless Headphones",
+    category: "Electronics",
+    subcategory: "Audio",
+    price: 189.99,
+    originalPrice: 249.99,
+    rating: 4.8,
+    reviewsCount: 342,
+    stock: 24,
+    image: "images/headphones_1788763327314.jpg",
+    badge: "Bestseller",
+    specs: {
+      "Battery Life": "40 Hours",
+      "Noise Cancellation": "Active Hybrid ANC",
+      "Bluetooth": "5.3 Multi-point",
+      "Driver": "40mm Custom Titanium"
+    },
+    description: "Premium over-ear noise cancelling headphones with studio-grade audio response, ultra-soft memory foam ear cushions, and fast charging (5 mins = 3 hours).",
+    tags: ["headphones", "audio", "noise cancelling", "wireless", "music", "bluetooth"],
+    returnEligible: true,
+    returnWindowDays: 30
+  },
+  {
+    id: "PROD-102",
+    name: "PulseFit Horizon Smartwatch 2",
+    category: "Electronics",
+    subcategory: "Wearables",
+    price: 149.50,
+    originalPrice: 199.00,
+    rating: 4.7,
+    reviewsCount: 219,
+    stock: 12,
+    image: "images/smartwatch_1788763354607.jpg",
+    badge: "Popular",
+    specs: {
+      "Display": "1.43\" AMOLED 60Hz",
+      "Battery": "7 Days Typical",
+      "Water Resistance": "5 ATM (50m)",
+      "Sensors": "SpO2, Heart Rate, GPS"
+    },
+    description: "Advanced fitness smartwatch featuring continuous health monitoring, standalone GPS tracking, call notifications, and 100+ workout modes.",
+    tags: ["smartwatch", "fitness", "wearable", "gps", "watch", "health"],
+    returnEligible: true,
+    returnWindowDays: 30
+  },
+  {
+    id: "PROD-103",
+    name: "CyberStride Nitro Urban Sneakers",
+    category: "Fashion",
+    subcategory: "Footwear",
+    price: 119.00,
+    originalPrice: 159.00,
+    rating: 4.9,
+    reviewsCount: 512,
+    stock: 8,
+    image: "images/sneakers_1788763537283.jpg",
+    badge: "Trending",
+    specs: {
+      "Material": "Recycled Flyknit Upper",
+      "Sole": "NitroGel Cushioning",
+      "Weight": "280g per shoe",
+      "Style": "Cyberpunk Urban"
+    },
+    description: "High-performance lifestyle sneakers designed with responsive shock absorption soles, breathable upper weave, and sleek reflective cyber accents.",
+    tags: ["sneakers", "shoes", "footwear", "fashion", "running", "urban"],
+    returnEligible: true,
+    returnWindowDays: 30
+  },
+  {
+    id: "PROD-104",
+    name: "AeroShield Modular Tech Backpack",
+    category: "Accessories",
+    subcategory: "Bags",
+    price: 95.00,
+    originalPrice: 120.00,
+    rating: 4.6,
+    reviewsCount: 180,
+    stock: 19,
+    image: "images/backpack_1788763557994.jpg",
+    badge: "Top Rated",
+    specs: {
+      "Capacity": "28 Liters (Expandable to 35L)",
+      "Laptop Sleeve": "Fits up to 16\" MacBook Pro",
+      "Waterproofing": "IPX4 Weatherproof",
+      "Security": "Hidden TSA Lock Pocket"
+    },
+    description: "Minimalist expandable tech backpack with dedicated padded laptop compartment, integrated USB pass-through port, and anti-theft hidden pockets.",
+    tags: ["backpack", "bag", "tech", "laptop", "travel", "accessories"],
+    returnEligible: true,
+    returnWindowDays: 30
+  },
+  {
+    id: "PROD-105",
+    name: "VORTEX RGB Mechanical Gaming Keyboard",
+    category: "Electronics",
+    subcategory: "Gaming",
+    price: 129.99,
+    originalPrice: 169.99,
+    rating: 4.85,
+    reviewsCount: 410,
+    stock: 15,
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
+    badge: "Pro Choice",
+    specs: {
+      "Switches": "Hot-swappable Yellow Linear",
+      "Connectivity": "Tri-mode (2.4G, BT 5.1, Type-C)",
+      "Keycaps": "Double-shot PBT Cherry Profile",
+      "RGB": "Per-key RGB with custom macro software"
+    },
+    description: "Custom compact mechanical keyboard engineered with sound-dampening gasket mount structure, pre-lubed switches, and low latency wireless mode.",
+    tags: ["keyboard", "gaming", "mechanical", "rgb", "pc", "electronics"],
+    returnEligible: true,
+    returnWindowDays: 30
+  },
+  {
+    id: "PROD-106",
+    name: "LuminaDesk Ultra-Wide LED Task Light",
+    category: "Home & Office",
+    subcategory: "Lighting",
+    price: 64.99,
+    originalPrice: 79.99,
+    rating: 4.75,
+    reviewsCount: 95,
+    stock: 30,
+    image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=600&q=80",
+    badge: "Eco Friendly",
+    specs: {
+      "Brightness": "1200 Lumens",
+      "Color Temp": "2700K - 6500K Adjustable",
+      "Control": "Auto-Dimming Ambient Sensor",
+      "Mount": "Heavy Duty Desk Clamp"
+    },
+    description: "Architect desk lamp providing glare-free illumination across double-monitor setups with CRI 95 color rendering and smart brightness sensing.",
+    tags: ["lamp", "desk", "lighting", "office", "home", "led"],
+    returnEligible: true,
+    returnWindowDays: 30
+  }
+];
